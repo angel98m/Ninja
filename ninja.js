@@ -1,9 +1,9 @@
 class Ninja {
     constructor(name) {
         this.name = name;
-        this.health = 100; // Valor inicial de salud
-        this.speed = 3;    // Valor predeterminado de velocidad
-        this.strength = 3; // Valor predeterminado de fuerza
+        this.health = 100;
+        this.speed = 3;
+        this.strength = 3;
     }
 
     sayName() {
@@ -20,9 +20,22 @@ class Ninja {
     }
 }
 
+class Sensei extends Ninja {
+    constructor(name) {
+        super(name);
+        this.health = 200;
+        this.speed = 10;
+        this.strength = 10;
+        this.wisdom = 10;
+    }
+
+    speakWisdom() {
+        this.drinkSake();
+        console.log("Lo que un programador puede hacer en un mes, dos programadores pueden hacerlo en dos meses.");
+    }
+}
+
 // Ejemplo de uso
-const ninja1 = new Ninja("Hyabusa");
-ninja1.sayName();
-ninja1.showStats();
-ninja1.drinkSake();
-ninja1.showStats();
+const superSensei = new Sensei("Master Splinter");
+superSensei.speakWisdom();
+superSensei.showStats();
